@@ -1,0 +1,94 @@
+// Variables
+$light: #ECE9E9;
+$lightgray: #BCBBBB;
+$gray: #484848;
+$darkgray: #272727;
+$dark: #1C1C1E;
+$stroke-active: #484848;
+$stroke-inactive: #2A2A2D;
+$border-radius-circular: 15px;
+$border-radius-rounded: 11px;
+$border-radius-square: 6px;
+// Styles for width above 768px
+body {
+  font-size: 16px;
+  font-family: 'Inter', sans-serif;
+}
+h0 {
+  font-size: 36px;
+  font-weight: 800;
+};
+h1 {
+  font-size: 24px;
+  font-weight: 700;
+};
+h2 {
+  font-size: 20px;
+  font-weight: 600;
+};
+h3 {
+  font-size: 20px;
+  font-weight: 500;
+};
+h4 {
+  font-size: 16px;
+  font-weight: 600;
+};
+h5 {
+  font-size: 16px;
+  font-weight: 500;
+};
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 24px;
+    font-weight: 700;
+  };
+  h2 {
+    font-size: 20px;
+    font-weight: 600;
+  };
+  h3 {
+    font-size: 20px;
+    font-weight: 500;
+  };
+  h4 {
+    font-size: 16px;
+    font-weight: 600;
+  };
+  h5 {
+    font-size: 16px;
+    font-weight: 500;
+  };
+  h6 {
+    font-size: 16px;
+    font-weight: 300;
+  };
+  h7 {
+    font-size: 14;
+    font-weight: 500;
+  }
+}
+
+@media (max-width: 320px) {
+  h2 {
+    font-size: 20px;
+    font-weight: 600;
+  };
+  h5 {
+    font-size: 16px;
+    font-weight: 500;
+  };
+  h8 {
+    font-size: 14px;
+    font-weight: 300;
+  };
+  h9 {
+    font-size: 8px;
+    font-weight: 500;
+  };
+  h10 {
+    font-size: 8px;
+    font-weight: 300;
+  };
+}
