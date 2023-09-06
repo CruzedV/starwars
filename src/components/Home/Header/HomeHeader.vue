@@ -24,12 +24,13 @@ import HomeHeaderMenu from "./HomeHeaderMenu.vue";
   display: flex;
   width: inherit;
   height: auto;
-  padding: 0.25rem;
+  padding: 0 0.25rem;
   justify-content: space-between;
   align-items: center;
   border: 1px solid var(--stroke-active);
   border-radius: var(--border-radius-circular);
   background-color: var(--background);
+  margin-bottom: 2.25rem;
 }
 .header-actions {
   display: flex;
@@ -38,16 +39,7 @@ import HomeHeaderMenu from "./HomeHeaderMenu.vue";
 }
 @media (max-width: 1280px) {
   .header {
-    margin: 0 2rem;
+    margin-bottom: 1.5rem;
   }
-}
-
-@media (max-width: 1024px) {
-  .header {
-    margin: 0 1.5rem;
-  }
-}
-
-@media (max-width: 320px) {
 }
 </style>

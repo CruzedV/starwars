@@ -15,14 +15,14 @@ export default {
 
 <template>
 <a @click="redirectToUrl" class="header-button">
-  <h2>{{ text }}</h2>
+  <h3>{{ text }}</h3>
   <h4> {{ text }}</h4>
 </a>
 </template>
 
 <style scoped lang="scss">
 .header-button {
-  width: 11rem;
+  width: 11.5rem;
   height: 5rem;
   justify-content: center;
   align-items: center;
@@ -42,7 +42,7 @@ h4 {
   display: none;
 }
 @media (max-width: 1280px) {
-  h2 {
+  h3 {
     display: none;
   }
   h4 {

@@ -27,8 +27,9 @@ img {
 }
 @media (max-width: 1024px) {
   .header-favourite {
-    width: 5.5rem;
+    width: 3.5rem;
     height: 2.5rem;
   }
 }
+
 </style>

@@ -21,17 +21,20 @@
   flex-shrink: 0;
   border: 1px solid var(--stroke-active);
   border-radius: var(--border-radius-rounded);
+  svg {
+    height: 100%;
+  }
 }
 
-.logo svg {
-  padding: 2.4rem;
-  height: 100%;
-}
+
 
 @media (max-width: 1280px) {
   .logo {
-    width: 8.5rem;
+    width: 8.875rem;
     height: 3.5rem;
+  }
+  svg {
+    padding: 30%;
   }
 }
 
@@ -39,6 +42,11 @@
   .logo {
     width: 7.5rem;
     height: 2.5rem;
+  }
+}
+@media (max-width: 320px) {
+  .logo {
+    width: 6rem;
   }
 }
 </style>
