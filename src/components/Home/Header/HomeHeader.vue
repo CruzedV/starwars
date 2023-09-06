@@ -19,7 +19,7 @@ import HomeHeaderMenu from "./HomeHeaderMenu.vue";
 </div>
 </template>
 
-<style lang="scss">
+<style scoped lang="scss">
 .header {
   display: flex;
   width: inherit;

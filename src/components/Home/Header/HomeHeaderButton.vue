@@ -16,7 +16,7 @@ export default {
 <template>
 <a @click="redirectToUrl" class="header-button">
   <h3>{{ text }}</h3>
-  <h4> {{ text }}</h4>
+  <h5> {{ text }}</h5>
 </a>
 </template>
 
@@ -34,19 +34,19 @@ export default {
   margin: 0.25rem;
   :hover {
     transition: background-color 0.4s, color 0.4s;
-    background: var(--foreground);
+    background-color: var(--foreground);
     color: var(--text-inactive);
   }
 }
-h4 {
+h5 {
   display: none;
 }
 @media (max-width: 1280px) {
   h3 {
     display: none;
   }
-  h4 {
-    display: block;
+  h5 {
+    display: flex;
   }
   .header-button {
     width: 8.5rem;
