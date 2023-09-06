@@ -1,10 +1,17 @@
 <script setup>
-import { RouterView } from 'vue-router'
+import HomeView from "./views/HomeView.vue"
 </script>
 
 <template>
-  <RouterView />
+<div class="container-center">
+  <HomeView/>
+</div>
 </template>
 
 <style scoped>
+.container-center {
+  justify-content: center;
+  height: 100%;
+  padding: 1rem; 
+}
 </style>
