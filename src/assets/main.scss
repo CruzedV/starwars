@@ -1,19 +1,23 @@
 // Variables
-$light: #ECE9E9;
-$lightgray: #BCBBBB;
-$gray: #484848;
-$darkgray: #272727;
-$dark: #1C1C1E;
-$stroke-active: #484848;
-$stroke-inactive: #2A2A2D;
-$border-radius-circular: 15px;
-$border-radius-rounded: 11px;
-$border-radius-square: 6px;
-// Styles for width above 768px
-body {
+:root {
+  --text-active: #ECE9E9;
+  --text-inactive: #BCBBBB;
+  --foreground-light: #484848;
+  --foreground: #272727;
+  --background: #1C1C1E;
+  --stroke-active: #484848;
+  --stroke-inactive: #2A2A2D;
+  --primary-purple: #9937EB;
+  --secondary-purple: #6C27A7;
+  --border-radius-circular: 15px;
+  --border-radius-rounded: 11px;
+  --border-radius-square: 6px;
   font-size: 16px;
-  font-family: 'Inter', sans-serif;
+  color: var(--text-active);
+  background-color: var(--background);
+  font-family: 'Oxanium', sans-serif;
 }
+// Styles for width above 768px
 h0 {
   font-size: 36px;
   font-weight: 800;
