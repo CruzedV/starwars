@@ -16,29 +16,37 @@ export default {
     },
     // False if left, true if right
     setPagesArray() {
+      const tabSize = 2
       // if at start
       if (this.selectedPage <= 5) {
         for (let i = 1; i <= 7; i++) {
           this.pagesArray.push(i)
         }
-        this.pagesArray.push("...")
-        this.pagesArray.push(21)
+        if (window.innerWidth > 768) {
+          this.pagesArray.push("...")
+          this.pagesArray.push(21)
+        }
       // If at end
       } else if (this.selectedPage >= 17) {
         for (let i = 15; i <= 21; i++) {
           this.pagesArray.push(i)
         }
-        this.pagesArray.unshift("...")
-        this.pagesArray.unshift(1)
+        if (window.innerWidth > 768) {
+          this.pagesArray.unshift("...")
+          this.pagesArray.unshift(1)
+        }
       // If not at start
       } else if (this.selectedPage > 5) {
-        for (let i = this.selectedPage-3; i <= this.selectedPage+3; i++) {
+        for (let i = this.selectedPage-tabSize; i <= this.selectedPage+tabSize; i++) {
           this.pagesArray.push(i)
         }
-        this.pagesArray.unshift("...")
-        this.pagesArray.unshift(1)
-        this.pagesArray.push("...")
-        this.pagesArray.push(21)
+        if (window.innerWidth > 768) {
+          this.pagesArray.unshift("...")  
+          this.pagesArray.unshift(1)
+          this.pagesArray.push("...")
+          this.pagesArray.push(21)
+        }
+        
       } 
     }
   },
@@ -72,7 +80,7 @@ export default {
       src="../../assets/chevron-right.svg"
       @click="this.selectedPage == 21 ? null : setSelectedPage(this.selectedPage+1)"
       :class="{notclickable: this.selectedPage == 21}"
-    />
+    /> 
   </item>
 </div>  
 </template>
@@ -83,7 +91,6 @@ export default {
   justify-content: center;
   align-items: flex-start;
   gap: 1rem;
-  flex-shrink: 0;
   margin-bottom: 5rem;
   img {
     width: 1.5rem;
@@ -123,6 +130,17 @@ export default {
     background-color: var(--primary-purple);
     border-radius: var(--border-radius-square);
     cursor: default;
+  }
+}
+@media (max-width: 768px) {
+  .paginator-base {
+    img {
+      display: none;
+    }
+    h6 {
+      width: 1.5rem;
+      height: 1.5rem;
+    }
   }
 }
 </style>
