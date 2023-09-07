@@ -1,4 +1,5 @@
 <script setup>
+import HomeCharacterCard from "./HomeCharacterCard.vue";
 import HomeCharactersTitle from "./HomeCharactersTitle.vue";
 </script>
 
@@ -6,22 +7,31 @@ import HomeCharactersTitle from "./HomeCharactersTitle.vue";
 <div class="characters">
   <HomeCharactersTitle/>
   <div class="characters-cards">
-
+    <HomeCharacterCard/>
+    <HomeCharacterCard/>
+    <HomeCharacterCard/>
+    <HomeCharacterCard/>
   </div>
 </div>
 </template>
 
 <style scoped lang="scss">
 .characters {
-  display: flex;
   height: inherit;
-  justify-content: space-between;
   margin-bottom: 5rem;
 }
 .characters-cards {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 4.5rem 0;
+  gap: 2rem;
+  width: 100%;
+  margin-top: 4.5rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  @media (max-width: 1280px) {
+    gap: 3rem 1.25rem;
+  }
+  @media (max-width: 320px) {
+    gap: 1.25rem;
+    grid-template-columns: 1fr;
+  }
 }
 </style>

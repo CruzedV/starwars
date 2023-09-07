@@ -16,5 +16,6 @@ import HomeCharactersSearch from "./HomeCharactersSearch.vue";
   display: flex;
   width: 100%;
   justify-content: space-between;
+  margin-bottom: 4.5rem;
 }
 </style>
