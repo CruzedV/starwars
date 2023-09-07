@@ -33,7 +33,7 @@ img {
   height: 1.5rem;
   margin-right: 0.5rem;
 }
-@media (max-width: 840px) {
+@media (max-width: 900px) {
   .header-menu {
     display: inline-flex;
   }

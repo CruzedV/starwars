@@ -22,31 +22,25 @@ export default {
         for (let i = 1; i <= 7; i++) {
           this.pagesArray.push(i)
         }
-        if (window.innerWidth > 768) {
-          this.pagesArray.push("...")
-          this.pagesArray.push(21)
-        }
+        this.pagesArray.push("...")
+        this.pagesArray.push(21)
       // If at end
       } else if (this.selectedPage >= 17) {
         for (let i = 15; i <= 21; i++) {
           this.pagesArray.push(i)
         }
-        if (window.innerWidth > 768) {
-          this.pagesArray.unshift("...")
-          this.pagesArray.unshift(1)
-        }
+        this.pagesArray.unshift("...")
+        this.pagesArray.unshift(1)
       // If not at start
       } else if (this.selectedPage > 5) {
         for (let i = this.selectedPage-tabSize; i <= this.selectedPage+tabSize; i++) {
           this.pagesArray.push(i)
         }
-        if (window.innerWidth > 768) {
-          this.pagesArray.unshift("...")  
-          this.pagesArray.unshift(1)
-          this.pagesArray.push("...")
-          this.pagesArray.push(21)
-        }
-      } 
+        this.pagesArray.unshift("...")  
+        this.pagesArray.unshift(1)
+        this.pagesArray.push("...")
+        this.pagesArray.push(21)
+      }
     }
   },
 
@@ -145,8 +139,20 @@ export default {
       display: none;
     }
     h6 {
-      width: 1.5rem;
-      height: 1.5rem;
+      width: 1.2rem;
+      height: 1.2rem;
+    }
+  }
+}
+@media (max-width: 320px) {
+  .paginator-base {
+    gap: 0.5rem;
+    img {
+      display: none;
+    }
+    h6 {
+      width: 1rem;
+      height: 1rem;
     }
   }
 }

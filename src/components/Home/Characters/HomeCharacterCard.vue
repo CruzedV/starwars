@@ -130,20 +130,6 @@ export default {
 }
 @media (max-width: 550px) {
   .card-base {
-    .card-background {
-      img {
-        width: 50%;
-        height: 16.625rem;
-      }
-    }
-    .card-info {
-      bottom: 2rem;
-      width: 50%;
-    }
-  }
-}
-@media (max-width: 320px) {
-  .card-base {
     height: 26.1875rem;
     .card-background {
       height: 22.4375rem;

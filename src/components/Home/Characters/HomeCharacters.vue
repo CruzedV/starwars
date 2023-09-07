@@ -29,7 +29,7 @@ import HomeCharactersTitle from "./HomeCharactersTitle.vue";
   @media (max-width: 1280px) {
     gap: 3rem 1.25rem;
   }
-  @media (max-width: 320px) {
+  @media (max-width: 550px) {
     gap: 1.25rem;
     grid-template-columns: 1fr;
   }

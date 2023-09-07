@@ -10,18 +10,17 @@ import HomeView from "./views/HomeView.vue"
 
 <style scoped>
 .container-center {
-  justify-content: center;
   height: 100%;
-  padding: 1rem 5%; 
+  padding: 1rem 8.5%; 
 }
 @media (max-width: 1280px) {
   .container-center {
-    padding: 1rem 7.5%; 
+    padding: 1rem 9.375%;
   } 
 }
 @media (max-width: 768px) {
   .container-center {
-    padding: 1rem 2rem; 
+    padding: 1rem 2rem;
   } 
 }
 @media (max-width: 320px) {

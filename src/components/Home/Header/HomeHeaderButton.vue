@@ -64,13 +64,13 @@ h3 {
     height: 3.5rem;
   }
 }
-@media (max-width: 1024px) {
+@media (max-width: 1100px) {
   .header-button {
     width: 7.5rem;
     height: 2.5rem;
   }
 }
-@media (max-width: 840px) {
+@media (max-width: 900px) {
   .header-button {
     display: none;
   }
