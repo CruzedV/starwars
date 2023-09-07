@@ -11,7 +11,7 @@ export default {
     setSelectedPage(page) {
       if (page != "...") {
         this.selectedPage = page
-        window.location.href = '/?page='+page
+        history.pushState(null, null, `?page=${page}`);
       }
     },
     // False if left, true if right
@@ -46,7 +46,6 @@ export default {
           this.pagesArray.push("...")
           this.pagesArray.push(21)
         }
-        
       } 
     }
   },
@@ -54,6 +53,14 @@ export default {
   mounted() {
     this.setPagesArray()
   },
+
+  watch: {
+    selectedPage() {
+      // add request logic
+      this.pagesArray = []
+      this.setPagesArray()
+    }
+  }
 }
 </script>
 
