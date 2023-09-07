@@ -22,30 +22,41 @@ export default {
 
 <style scoped lang="scss">
 .header-button {
+  cursor: pointer;
   width: 11.5rem;
   height: 5rem;
+  border-radius: var(--border-radius-rounded);
+  border: 1px solid var(--stroke-inactive);
+  color: var(--text-active);
+  margin: 0.25rem;
   justify-content: center;
   align-items: center;
   display: flex;
-  border-radius: var(--border-radius-rounded);
-  border: 1px solid var(--stroke-inactive);
-  background-color: var(--background);
-  color: var(--text-active);
-  margin: 0.25rem;
   :hover {
     transition: background-color 0.4s, color 0.4s;
-    background-color: var(--foreground);
+    background: var(--foreground);
     color: var(--text-inactive);
   }
 }
 h5 {
+  width: 100%;
+  height: 100%;
   display: none;
+}
+h3 {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  width: 100%;
+  height: 100%;
 }
 @media (max-width: 1280px) {
   h3 {
     display: none;
   }
   h5 {
+    justify-content: center;
+    align-items: center;
     display: flex;
   }
   .header-button {
