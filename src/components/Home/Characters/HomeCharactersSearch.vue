@@ -38,6 +38,7 @@ export default {
     display: flex;
     align-items: center;
     img {
+      cursor: pointer;
       padding: 0.5rem 0 0.5rem 0.5rem;
       margin-right: 1rem;
       width: 1.5rem;

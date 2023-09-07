@@ -52,6 +52,7 @@ export default {
   .card-info {
     margin: 2.5rem 2.5rem 3rem 22.75rem;
       h5 {
+      cursor: pointer;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -60,6 +61,11 @@ export default {
       height: 3rem; 
       background-color: var(--primary-purple);
       margin: 0;
+      &:hover {
+        transition: background-color 0.4s;
+        background-color: var(--secondary-purple);  
+        border-radius: var(--border-radius-circular);
+      }
     }
     h2 {
       margin-bottom: 2rem;
