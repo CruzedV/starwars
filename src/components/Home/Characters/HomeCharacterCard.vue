@@ -1,39 +1,77 @@
 <script>
+import HomeCharacterDetails from './HomeCharacterDetails.vue'
 export default {
   data() {
     return {
       name: "Darth Wader",
-      birth_year: "",
-      height: "",
-      mass: "",
-      hair_color: "",
-      skin_color: "",
-      eye_color: "",
+      birth_year: "41.9BBY",
+      height: "202 cm",
+      mass: "136 kg",
+      hair_color: "none",
+      skin_color: "white",
+      eye_color: "blue",
       films: [],
+      showInfo: false,
     }
   },
+
+  components: {
+    HomeCharacterDetails
+  },
+
+  methods: {
+    showDetails() {
+      this.showInfo = !this.showInfo
+    }
+  }
 }
 </script>
 
 
 <template>
-<div class="card-base">
-  <div class="card-background">
+<div class="character__card-base">
+  <div class="character__card-background">
     <img src="../../../assets/example-picture.jpg">
-    <div class="card-info">
+    <div class="character__card-info">
       <h2>
         {{ name }}
       </h2>
-      <h5>Learn more</h5>
+      <h5 @click="showDetails()">Learn more</h5>
     </div>
   </div>
+</div>
+<div v-if="showInfo" class="character__details-overlay">
+  <HomeCharacterDetails
+    :name="this.name"
+    :birth_year="this.birth_year"
+    :height="this.height"
+    :mass="this.mass"
+    :hair_color="this.hair_color"
+    :skin_color="this.skin_color"
+    :eye_color="this.eye_color"
+    :films="this.films"
+    @close-window="showDetails()"
+  />
 </div>
 </template>
 
 <style scoped lang="scss">
-.card-base {
+.character__details-overlay {
+  z-index: 888;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  // Background color
+  background-color: rgba(28, 28, 30, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.character__card-base {
   width: 100%;
-  .card-background {
+  .character__card-background {
     background-color: var(--foreground);
     border-radius: var(--border-radius-circular);
     border: 1px solid var(--stroke-active);
@@ -42,16 +80,17 @@ export default {
     height: 25rem;
     img {
       position: absolute;
-      bottom: 3rem;
+      top: -3rem;
+      margin-bottom: auto;
       left: 2.5rem;
       width: 18.75rem;
       height: 25rem;
       border-radius: var(--border-radius-circular);
     }
   }
-  .card-info {
+  .character__card-info {
     margin: 2.5rem 2.5rem 3rem 22.75rem;
-      h5 {
+    h5 {
       cursor: pointer;
       display: flex;
       justify-content: center;
@@ -73,15 +112,16 @@ export default {
   }
 }
 @media (max-width: 1280px) {
-  .card-base {
+  .character__card-base {
     height: 37.25rem;
-    .card-background {
+    .character__card-background {
       height: 33.25rem;
       img {
-        bottom: 12.25rem;
+        top: -3rem;
+        margin-bottom: auto;
       }
     }
-    .card-info {
+    .character__card-info {
       margin: 23.25rem 10.625rem 3rem 2.5rem;
       h5 {
         width: 12.5rem;
@@ -90,21 +130,22 @@ export default {
   }
 }
 @media (max-width: 1024px) {
-  .card-base {
+  .character__card-base {
     height: 32.75rem;
-    .card-background {
+    .character__card-background {
       height: 29.25rem;
       img {
         width: 15.25rem;
         height: 20.5rem;
-        bottom: 11rem;
+        top: -3rem;
+        margin-bottom: auto;
         margin-left: auto;
         margin-right: auto;
         left: 0;
         right: 0;
       }
     }
-    .card-info {
+    .character__card-info {
       width: 15.25rem;
       position: absolute;
       margin: 0;
@@ -120,32 +161,33 @@ export default {
   }
 }
 @media (max-width: 768px) {
-  .card-base {
+  .character__card-base {
     height: 28.125rem;
-    .card-background {
+    .character__card-background {
       height: 25.125rem;
       img {
         width: 12.5rem;
         height: 70%;
       }
     }
-    .card-info {
+    .character__card-info {
       width: 12.5rem;
     }
   }
 }
 @media (max-width: 550px) {
-  .card-base {
+  .character__card-base {
     height: 26.1875rem;
-    .card-background {
+    .character__card-background {
       height: 22.4375rem;
       img {
         width: 10.625rem;
         height: 14.1875rem;
-        bottom: 12rem;
+        top: -3rem;
+        margin-bottom: auto;
       }
     }
-    .card-info {
+    .character__card-info {
       width: 10.625rem;
       bottom: 4rem;
     }
