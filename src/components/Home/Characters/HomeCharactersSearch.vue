@@ -47,7 +47,7 @@ export default {
   }
   input[type="text"] {
     font-family: "Oxanium", sans-serif;
-    font-size: 16px;
+    font-size: 0.875rem;
     height: 2.5rem;
     width: 19.5rem;
     background-color: var(--background);
