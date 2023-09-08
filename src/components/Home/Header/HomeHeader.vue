@@ -1,5 +1,5 @@
 <script setup>
-import SiteLogo from "../Logo/SiteLogo.vue";
+import SiteLogo from "../SiteLogo.vue";
 import HomeHeaderButton from "./HomeHeaderButton.vue";
 import HomeHeaderFavourite from "./HomeHeaderFavourite.vue"
 import HomeHeaderMenu from "./HomeHeaderMenu.vue";

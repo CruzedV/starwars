@@ -8,8 +8,8 @@ export default {
 
   methods: {
     async searchCharacter(query) {
+      //Make req logic
       // Example request: "https://swapi.dev/api/people/?search="+query
-      console.log("Inputed: "+query)
     }
   }
 }
