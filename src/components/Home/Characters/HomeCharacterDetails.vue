@@ -143,7 +143,7 @@ export default {
     margin-left: auto;
     right: 2.5rem;
     margin-bottom: auto;
-    top: -2.5rem;
+    top: 2.5rem;
     cursor: pointer;
     position: absolute;
     width: 1.5rem;
