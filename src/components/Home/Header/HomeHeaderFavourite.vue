@@ -25,7 +25,7 @@ img {
     height: 3.5rem;
   }
 }
-@media (max-width: 1024px) {
+@media (max-width: 1100px) {
   .header-favourite {
     width: 3.5rem;
     height: 2.5rem;

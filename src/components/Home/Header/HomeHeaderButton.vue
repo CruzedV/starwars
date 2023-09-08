@@ -14,21 +14,21 @@ export default {
 </script>
 
 <template>
-<a @click="redirectToUrl" class="header-button">
+<a @click="redirectToUrl" class="header__button">
   <h3>{{ text }}</h3>
   <h5> {{ text }}</h5>
 </a>
 </template>
 
 <style scoped lang="scss">
-.header-button {
+.header__button {
   cursor: pointer;
   width: 11.5rem;
   height: 5rem;
   border-radius: var(--border-radius-rounded);
   border: 1px solid var(--stroke-inactive);
   color: var(--text-active);
-  margin: 0.25rem;
+  margin: 0.25 0rem;
   justify-content: center;
   align-items: center;
   display: flex;
@@ -59,19 +59,19 @@ h3 {
     align-items: center;
     display: flex;
   }
-  .header-button {
+  .header__button {
     width: 8.5rem;
     height: 3.5rem;
   }
 }
 @media (max-width: 1100px) {
-  .header-button {
+  .header__button {
     width: 7.5rem;
     height: 2.5rem;
   }
 }
 @media (max-width: 900px) {
-  .header-button {
+  .header__actions > .header__button {
     display: none;
   }
 }

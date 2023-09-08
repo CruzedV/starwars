@@ -1,17 +1,48 @@
 <script>
+import HomeHeaderButton from "./HomeHeaderButton.vue"
 export default {
+  data() {
+    return {
+      isMenu: false,
+    }
+  },
+
+  methods: {
+    showMenu() {
+      this.isMenu = !this.isMenu
+    },
+  },
+
+  components: {
+    HomeHeaderButton
+  }
 }
 </script>
 
 <template>
-<a class="header-menu">
+<a class="header__menu"  @click="this.showMenu">
   <img src="../../../assets/menu.svg"/>
-  <h4>Menu</h4>
+  <h5> Menu </h5>
+  <div v-if="this.isMenu" class="header__menu-dropdown">
+    <div class="header__menu-item">
+      <HomeHeaderButton text="Home" url="/"/>
+    </div>
+    <div class="header__menu-item">
+      <HomeHeaderButton text="News" url="https://www.starwars.com/news"/>
+    </div>
+    <div class="header__menu-item">
+      <HomeHeaderButton text="Gallery" url="https://www.starwars.com/databank"/>
+    </div>
+    <div class="header__menu-item">
+      <HomeHeaderButton text="Forum" url="https://www.starwars.com"/>
+    </div>
+  </div>
 </a>
 </template>
 
 <style scoped lang="scss">
-.header-menu {
+.header__menu {
+  position: relative;
   justify-content: center;
   align-items: center;
   display: none;
@@ -22,8 +53,34 @@ export default {
   background-color: var(--background);
   color: var(--text-active);
   margin: 0.25rem;
+  &:hover {
+    cursor: pointer;
+    transition: background-color 0.4s;
+    background-color: var(--foreground);
+    border-radius: var(--border-radius-rounded);
+  }
+  .header__menu-dropdown {
+    padding: 1rem 0;
+    z-index: 1;
+    top: 3rem;
+    position: absolute;
+    width: 100%;
+    background-color: var(--background);
+    border-radius: var(--border-radius-rounded);
+    border: 1px solid var(--stroke-active);
+    display: flex;
+    gap: 1rem;
+    flex-direction: column;
+  }
+  .header__menu-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+    width: 100%;
+  }
 }
-h4 {
+h5 {
   width: 5.5rem;
   justify-content: center;
   display: flex;
@@ -34,18 +91,18 @@ img {
   margin-right: 0.5rem;
 }
 @media (max-width: 900px) {
-  .header-menu {
+  .header__menu {
     display: inline-flex;
   }
 }
 @media (max-width: 460px) {
-  .header-menu {
+  .header__menu {
     width: 3.5rem;
   }
   img {
     margin-right: 0;
   }
-  h4 {
+  h5 {
     display: none;
   }
 }

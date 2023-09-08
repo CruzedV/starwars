@@ -8,7 +8,7 @@ import HomeHeaderMenu from "./HomeHeaderMenu.vue";
 <template>
 <div class="header">
   <SiteLogo/>
-  <div class="header-actions">
+  <div class="header__actions">
     <HomeHeaderButton text="Home" url="/"/>
     <HomeHeaderButton text="News" url="https://www.starwars.com/news"/>
     <HomeHeaderButton text="Gallery" url="https://www.starwars.com/databank"/>
@@ -32,7 +32,8 @@ import HomeHeaderMenu from "./HomeHeaderMenu.vue";
   background-color: var(--background);
   margin-bottom: 2.25rem;
 }
-.header-actions {
+.header__actions {
+  gap: 0.25rem;
   display: flex;
   justify-content: center;
   align-items: center;
