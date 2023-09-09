@@ -28,13 +28,13 @@ export default {
       <HeaderButton text="Home" url="/"/>
     </div>
     <div class="header__menu-item">
-      <HeaderButton text="News" url="https://www.starwars.com/news"/>
+      <HeaderButton text="News" url="/news"/>
     </div>
     <div class="header__menu-item">
-      <HeaderButton text="Gallery" url="https://www.starwars.com/databank"/>
+      <HeaderButton text="Characters" url="/characters"/>
     </div>
     <div class="header__menu-item">
-      <HeaderButton text="Forum" url="https://www.starwars.com"/>
+      <HeaderButton text="Forum" url="/forum"/>
     </div>
   </div>
 </a>

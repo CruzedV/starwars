@@ -2,21 +2,40 @@
 export default {
   data() {
     return {
-      urlArray: [{url: "Home"}, {url: "/"}, {url: "Characters"}]
+      urlArray: [],
+    }
+  },
+
+  beforeMount() {
+    const segments = window.location.pathname.split("/")
+    segments[0] = "/"
+    if (segments[1] == "") {
+      segments.pop()
+    }
+    for (let seg in segments) {
+      let i = segments[seg]
+      // Make first letter of element uppercase 
+      this.urlArray.push({url: i})
     }
   }
 }
 </script>
 
-
 <template>
 <div class="breadcrumbs">
-  <h5
+  <a
     v-for="(item, index) in urlArray"
     :key="index"
+    :href="item.url"
   >
-    {{item.url}}
-  </h5>
+    <h5>
+      {{
+      // If element "" make it Home also make first letter capital
+      (item.url == "/" ? "Home" : item.url.charAt(0).toUpperCase() + item.url.slice(1))
+      // If last element, don't add /
+      + (urlArray[urlArray.length - 1].url == item.url ? "" : " /") }}
+    </h5>
+  </a>
 </div>
 </template>
 
@@ -29,6 +48,9 @@ export default {
   color: var(--text-inactive);
   :last-child {
     color: var(--text-active);
+  }
+  a {
+    text-decoration: none;
   }
   margin-bottom: 5rem;
   @media (max-width: 1280px) {

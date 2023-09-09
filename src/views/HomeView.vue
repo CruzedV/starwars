@@ -1,17 +1,25 @@
 <script setup>
-import SiteBreadcrumbs from "@/components/BreadCrumbs/SiteBreadcrumbs.vue"
-import SiteCharacters from "@/components/Characters/SiteCharacters.vue"
 import SiteFooter from "@/components/Footer/SiteFooter.vue"
 import SiteHeader from "@/components/Header/SiteHeader.vue"
-import SitePaginator from "@/components/Paginator/SitePaginator.vue"
+import SiteBreadcrumbs from "@/components/Breadcrumbs/SiteBreadcrumbs.vue"
 </script>
 
 <template>
   <main>
     <SiteHeader/>
     <SiteBreadcrumbs/>
-    <SiteCharacters/>
-    <SitePaginator/>
+    <div class="home">
+      Начальная страница, макет в "Characters"
+    </div>
     <SiteFooter/>
   </main>
 </template>
+
+<style scoped>
+.home {
+  height: 10rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+</style>

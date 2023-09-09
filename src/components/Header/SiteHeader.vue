@@ -10,9 +10,9 @@ import HeaderMenu from "./HeaderMenu.vue";
   <SiteLogo/>
   <div class="header__actions">
     <HeaderButton text="Home" url="/"/>
-    <HeaderButton text="News" url="https://www.starwars.com/news"/>
-    <HeaderButton text="Gallery" url="https://www.starwars.com/databank"/>
-    <HeaderButton text="Forum" url="https://www.starwars.com"/>
+    <HeaderButton text="News" url="/news"/>
+    <HeaderButton text="Characters" url="/characters"/>
+    <HeaderButton text="Forum" url="/forum"/>
     <HeaderMenu/>
     <HeaderFavourite/>
   </div>
