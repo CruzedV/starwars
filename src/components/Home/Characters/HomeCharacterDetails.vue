@@ -1,5 +1,14 @@
 <script>
+import { useCharactersStore } from "@/stores/characters"
+
 export default {
+  setup() {
+    const charactersStore = useCharactersStore()
+    return {
+      charactersStore
+    }
+  },
+
   props: {
     name: String,
     birth_year: String,
@@ -16,7 +25,34 @@ export default {
       this.$emit("close-window")
     },
     addToFavourite() {
-      // Logic to add to localStorage and pinia
+      const characterData = {
+        name: this.name,
+        birth_year: this.birth_year,
+        height: this.height,
+        mass: this.mass,
+        hair_color: this.hair_color,
+        skin_color: this.skin_color,
+        eye_color: this.eye_color,
+        films: this.films,
+      };
+
+      let favourites = JSON.parse(localStorage.getItem("favourites")) || []
+
+      const existingCharacterIndex = favourites.findIndex(item => item.name === this.name)
+      
+      if (existingCharacterIndex !== -1) {
+        favourites.splice(existingCharacterIndex, 1);
+      } else {
+        favourites.push(characterData);
+      }
+      localStorage.setItem("favourites", JSON.stringify(favourites))
+      this.charactersStore.updateFavourite()
+    }
+  },
+
+  computed: {
+    isFavourite() {
+      return this.charactersStore.checkIsFavourite(this.name)
     }
   }
 }
@@ -59,8 +95,19 @@ export default {
     </div>
     <h5
       @click="addToFavourite()"
+      v-if="isFavourite"
     >
       Add to Favourite
+      <img 
+        src="../../../assets/bookmark-outline.svg"
+        class="character__details-bookmark"
+      >
+    </h5>
+    <h5
+      @click="addToFavourite()"
+      v-else
+    >
+      Remove from Favourite
       <img 
         src="../../../assets/bookmark-outline.svg"
         class="character__details-bookmark"

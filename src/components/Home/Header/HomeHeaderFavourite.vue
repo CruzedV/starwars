@@ -1,24 +1,65 @@
+<script>
+import { useCharactersStore } from "@/stores/characters"
+
+export default {
+  setup() {
+    const charactersStore = useCharactersStore()
+    return {
+      charactersStore
+    }
+  },
+
+  methods: {
+    getFavourite() {
+      try {
+        this.charactersStore.setCharactersList(this.charactersStore.getFavourite)
+      } catch(error) {
+        console.error("Error loading favourites")
+      }
+    }
+  },
+  
+  computed: {
+    favouriteAmount() {
+      return this.charactersStore.getFavouriteAmount
+    }
+  }
+}
+</script>
+
 <template>
-<button class="header__favourite">
+<a 
+  class="header__favourite" 
+  @click="favouriteAmount > 0 ? getFavourite() : null"
+>
   <img src="../../../assets/bookmark-outline.svg"/>
-  <h6 class="header__favourite-amount">
-    4
+  <h6 
+    class="header__favourite-amount"
+    v-if="favouriteAmount > 0"
+  >
+    {{ favouriteAmount }}
   </h6>
-</button>
+</a>
 </template>
 
 <style scoped lang="scss">
 .header__favourite {
+  cursor: pointer;
   width: 7.5rem;
   height: 5rem;
   justify-content: center;
   align-items: center;
-  display: inline-flex;
+  display: flex;
   border-radius: var(--border-radius-rounded);
   border: 1px solid var(--stroke-inactive);
   background-color: var(--background);
   margin: 0.25rem;
   position: relative;
+  :hover {
+    transition: background-color 0.4s, color 0.4s;
+    background: var(--foreground);
+    color: var(--text-inactive);
+  }
   .header__favourite-amount {
     margin: 0;
     display: flex;
