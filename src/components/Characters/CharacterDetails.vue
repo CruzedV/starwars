@@ -143,7 +143,7 @@ export default {
     height: 3rem;
     background-color: var(--primary-purple);
     margin: 0;
-    gap: 1.5rem;
+    gap: 5%;
     .character__details-bookmark {
       width: 1.5rem;
       height: 1.5rem;
@@ -156,24 +156,27 @@ export default {
   }
   .character__details-info {
     width: 100%;
-    margin: 3.75rem 2.5rem 8.5rem 38.5rem;
+    margin: 3.75% 2.5rem 8.5% 38.5rem;
     .character__details-title {
       margin: 0;
       margin-bottom: 2.25rem;
     }
     .character__details-stats {
-      gap: 0.5rem;
+      gap: 5%;
       display: inline-flex;
       justify-content: space-between;
       margin-bottom: 3rem;
       .character__details-field {
-        gap: 0.75rem;
+        gap: 0.5rem;
         display: flex;
         flex-direction: column;
         h3 {
           white-space: nowrap;
           font-weight: 500;
           margin: 0;
+          @media (max-height: 800px) {
+            font-size: 80%;
+          }
         }
       }
     }
@@ -188,9 +191,9 @@ export default {
   }
   .character__details-close {
     margin-left: auto;
-    right: 2.5rem;
+    right: 2.5%;
     margin-bottom: auto;
-    top: 2.5rem;
+    top: 2.5%;
     cursor: pointer;
     position: absolute;
     width: 1.5rem;
@@ -223,10 +226,15 @@ export default {
     .character__details-image {
       width: 13.75rem;
       height: 17.5rem;
+      @media (max-height: 900px) {
+        right: 3rem;
+        left: 0;
+        margin-left: auto;
+      }
     }
     .character__details-field {
       h3 {
-        font-size: 1rem;
+        font-size: 90%;
       }
     }
     .character__details-info {
@@ -236,7 +244,7 @@ export default {
       position: absolute;
       bottom: 2rem;
       .character__details-title {
-        font-size: 1rem;
+        font-size: 90%;
         font-weight: 600;
       }
     }
@@ -249,24 +257,23 @@ export default {
     .character__details-image {
       width: 15.25rem;
       height: 19rem;
-      top: -4.5rem;
+      top: -3rem;
       left: 0;
       right: 0;
       margin-left: auto;
       margin-right: auto;
+      @media (max-height: 1000px) {
+        right: 3rem;
+        margin-left: auto;
+        margin-right: 0;
+        @media (max-width: 720px) {
+          width: 30%;
+          height: 40%;
+        }
+      }
     }
     .character__details-info {
       width: 60%;
-      .character__details-title {
-        font-size: 1rem;
-      }
-      .character__details-stats {
-        .character__details-field {
-          h3 {
-            font-size: 1rem;
-          }
-        }
-      }
       
     }
     
@@ -284,12 +291,16 @@ export default {
     .character__details-image {
       width: 8rem;
       height: 10.75rem;
+      left: 0;
+      right: 0;
+      margin-left: auto;
+      margin-right: auto;
     }
     .character__details-info {
       left: 1rem;
       .character__details-stats {
         .character__details-field {
-          gap: 0.2rem;
+          gap: 2%;
           h3 {
             font-size: 8px;
           }
