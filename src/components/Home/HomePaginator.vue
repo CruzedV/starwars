@@ -1,8 +1,16 @@
 <script>
+import { useCharactersStore } from "@/stores/characters"
 export default {
+  setup() {
+    const charactersStore = useCharactersStore()
+    return {
+      charactersStore
+    }
+  },
+
   data() {
     return {
-      selectedPage: parseInt(new URLSearchParams(window.location.search).get('page')) || 1,
+      selectedPage: parseInt(new URLSearchParams(window.location.search).get("page")) || 1,
       pagesArray: [],
     }
   },
@@ -23,10 +31,10 @@ export default {
           this.pagesArray.push(i)
         }
         this.pagesArray.push("...")
-        this.pagesArray.push(21)
+        this.pagesArray.push(9)
       // If at end
-      } else if (this.selectedPage >= 17) {
-        for (let i = 15; i <= 21; i++) {
+      } else if (this.selectedPage >= 7) {
+        for (let i = 5; i <= 9; i++) {
           this.pagesArray.push(i)
         }
         this.pagesArray.unshift("...")
@@ -39,20 +47,30 @@ export default {
         this.pagesArray.unshift("...")  
         this.pagesArray.unshift(1)
         this.pagesArray.push("...")
-        this.pagesArray.push(21)
+        this.pagesArray.push(9)
+      }
+    },
+    async fetchCharactersList(page) {
+      try {
+        this.charactersStore.setCharactersList([])
+        let response = await fetch("https://swapi.dev/api/people/?page="+page)
+        this.charactersStore.setCharactersList(await response.json())
+      } catch(error) {
+        console.error("Error while fetching characters list: "+error)
       }
     }
   },
 
   mounted() {
     this.setPagesArray()
+    this.fetchCharactersList(this.selectedPage)
   },
 
   watch: {
     selectedPage() {
-      // add request logic
       this.pagesArray = []
       this.setPagesArray()
+      this.fetchCharactersList(this.selectedPage)
     }
   }
 }
@@ -79,8 +97,8 @@ export default {
   <item>
     <img 
       src="../../assets/chevron-right.svg"
-      @click="this.selectedPage == 21 ? null : setSelectedPage(this.selectedPage+1)"
-      :class="{notclickable: this.selectedPage == 21}"
+      @click="this.selectedPage == 9 ? null : setSelectedPage(this.selectedPage+1)"
+      :class="{notclickable: this.selectedPage == 9}"
     /> 
   </item>
 </div>  

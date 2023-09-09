@@ -1,16 +1,19 @@
 <script>
 import HomeCharacterDetails from './HomeCharacterDetails.vue'
 export default {
+  props: {
+    name: String,
+    birth_year: String,
+    height: String,
+    mass: String,
+    hair_color: String,
+    skin_color: String,
+    eye_color: String,
+    films: Array,
+  },
+
   data() {
     return {
-      name: "Darth Wader",
-      birth_year: "41.9BBY",
-      height: "202 cm",
-      mass: "136 kg",
-      hair_color: "none",
-      skin_color: "white",
-      eye_color: "blue",
-      films: [],
       showInfo: false,
     }
   },

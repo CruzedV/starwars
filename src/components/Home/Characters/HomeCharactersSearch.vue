@@ -1,5 +1,13 @@
 <script>
+import { useCharactersStore } from "@/stores/characters"
 export default {
+  setup() {
+    const charactersStore = useCharactersStore()
+    return {
+      charactersStore
+    }
+  },
+
   data() {
     return {
       query: "",
@@ -8,8 +16,13 @@ export default {
 
   methods: {
     async searchCharacter(query) {
-      //Make req logic
-      // Example request: "https://swapi.dev/api/people/?search="+query
+      try {
+        this.charactersStore.setCharactersList([])
+        let response = await fetch("https://swapi.dev/api/people/?search="+query)
+        this.charactersStore.setCharactersList(await response.json())
+      } catch(error) {
+        console.error("Error while fetching search: ",+error)
+      }
     }
   }
 }

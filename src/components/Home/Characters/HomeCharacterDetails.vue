@@ -49,11 +49,11 @@ export default {
         <h3> {{hair_color}} </h3>
         <h3> {{skin_color}} </h3>
         <h3> {{eye_color}} </h3>
-        <h3 
+        <h3
           v-for="(film, index) in films"
           :key="index"
         > 
-          {{films}} 
+          {{ film }} 
         </h3>
       </div>
     </div>
@@ -80,7 +80,6 @@ export default {
   position: relative;
   display: flex;
   width: 76.75rem;
-  height: 42.25rem;
   background-color: var(--foreground);
   border-radius: var(--border-radius-circular); 
   justify-content: center;
@@ -125,6 +124,7 @@ export default {
         display: flex;
         flex-direction: column;
         h3 {
+          white-space: nowrap;
           font-weight: 500;
           margin: 0;
         }
@@ -136,7 +136,6 @@ export default {
     bottom: 3rem;
     left: 3.5rem;
     width: 31.75rem;
-    height: 42.25rem;
     border-radius: var(--border-radius-circular);
   }
   .character__details-close {
@@ -153,7 +152,6 @@ export default {
 @media (max-width: 1280px) {
   .character__details-base {
     width: 57.5rem;
-    height: 34.125rem;
     .character__details-image {
       width: 18.75rem;
       height: 25rem;
@@ -161,6 +159,7 @@ export default {
       top: -3rem;
     }
     .character__details-info {
+      width: 100%;
       margin: 3.75rem 3rem 3rem 23rem;
     }
     .character__details-close {
@@ -172,12 +171,13 @@ export default {
 @media (max-width: 1024px) {
   .character__details-base {
     width: 37.75rem;
-    height: 46.25rem;
+    height: 85%;
     .character__details-image {
       width: 13.75rem;
       height: 17.5rem;
     }
     .character__details-info {
+      width: 70%;
       margin: 0;
       left: 3rem;
       position: absolute;
@@ -190,8 +190,8 @@ export default {
 }
 @media (max-width: 768px) {
   .character__details-base {
-    width: 90%;
-    height: 44.0625rem;
+    width: 70%;
+    height: 75%;
     .character__details-image {
       width: 15.25rem;
       height: 19rem;
@@ -202,6 +202,7 @@ export default {
       margin-right: auto;
     }
     .character__details-info {
+      width: 60%;
       .character__details-title {
         font-size: 1rem;
       }
@@ -217,7 +218,7 @@ export default {
     
   }
 }
-@media (max-width: 320px) {
+@media (max-width: 530px) {
   .character__details-base {
     width: 80%;
     height: 29rem;
