@@ -22,54 +22,59 @@ export default {
         history.pushState(null, null, `?page=${page}`);
       }
     },
-    // False if left, true if right
     setPagesArray() {
+      this.pagesArray = []
       const tabSize = 2
       // if at start
-      if (this.selectedPage <= 5) {
-        for (let i = 1; i <= 7; i++) {
+      if (this.selectedPage <= this.computePagesAmount-4) {
+        for (let i = 1; i <= this.computePagesAmount-3; i++) {
           this.pagesArray.push(i)
         }
         this.pagesArray.push("...")
-        this.pagesArray.push(9)
+        this.pagesArray.push(this.computePagesAmount)
       // If at end
-      } else if (this.selectedPage >= 7) {
-        for (let i = 5; i <= 9; i++) {
+      } else if (this.selectedPage >= this.computePagesAmount-3) {
+        for (let i = this.computePagesAmount-4; i <= this.computePagesAmount; i++) {
           this.pagesArray.push(i)
         }
         this.pagesArray.unshift("...")
         this.pagesArray.unshift(1)
       // If not at start
-      } else if (this.selectedPage > 5) {
+      } else if (this.selectedPage > this.computePagesAmount-4) {
         for (let i = this.selectedPage-tabSize; i <= this.selectedPage+tabSize; i++) {
           this.pagesArray.push(i)
         }
         this.pagesArray.unshift("...")  
         this.pagesArray.unshift(1)
         this.pagesArray.push("...")
-        this.pagesArray.push(9)
+        this.pagesArray.push(this.computePagesAmount)
       }
     },
     async fetchCharactersList(page) {
       try {
         this.charactersStore.setCharactersList([])
-        let response = await fetch("https://swapi.dev/api/people/?page="+page)
-        this.charactersStore.setCharactersList(await response.json())
+        // replace 'people' with current url
+        let response = await fetch("https://swapi.dev/api/"+"people"+"/?page="+page)
+        await this.charactersStore.setCharactersList(await response.json())
+        await this.setPagesArray()
       } catch(error) {
         console.error("Error while fetching characters list: "+error)
       }
     }
   },
 
+  computed: {
+    computePagesAmount() {
+      return this.charactersStore.getPagesAmount
+    }
+  },
+
   mounted() {
-    this.setPagesArray()
     this.fetchCharactersList(this.selectedPage)
   },
 
   watch: {
     selectedPage() {
-      this.pagesArray = []
-      this.setPagesArray()
       this.fetchCharactersList(this.selectedPage)
     }
   }

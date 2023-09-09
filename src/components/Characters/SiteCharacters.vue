@@ -18,7 +18,7 @@ export default {
 
   computed: {
     computeCharacters() {
-      return this.charactersStore.getCharacters
+      return this.charactersStore.getCharacters.results
     },
   },
 

@@ -11,9 +11,7 @@ export const useCharactersStore = defineStore('characters', {
   actions: {
     setCharactersList(data) {
       try {
-        this.characters = {
-          results: data.results ? data.results : data,
-        }
+        this.characters = {...data}
       } catch(error) {
         console.error("Unable to set characters list: "+error)
       }
@@ -39,13 +37,16 @@ export const useCharactersStore = defineStore('characters', {
   },
   getters: {
     getCharacters() {
-      return this.characters.results
+      return this.characters
     },
     getFavourite() {
       return this.favourite
     },
     getFavouriteAmount() {
       return this.favouriteAmount;
-    }
+    },
+    getPagesAmount() {
+      return Math.ceil(this.characters.count / 10)
+    },
   }
 })
