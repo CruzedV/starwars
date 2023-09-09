@@ -1,11 +1,11 @@
 <script setup>
-import HomeCharactersSearch from "./HomeCharactersSearch.vue";
+import CharactersSearch from "./CharactersSearch.vue";
 </script>
 
 <template>
 <div class="characters__title">
   <h1>Characters</h1>
-  <HomeCharactersSearch/>
+  <CharactersSearch/>
 </div>
 </template>
 

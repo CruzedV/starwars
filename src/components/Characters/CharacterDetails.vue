@@ -61,7 +61,7 @@ export default {
 <template>
 <div class="character__details-base">
   <img 
-    src="../../../assets/example-picture.jpg" 
+    src="../../assets/example-picture.jpg" 
     class="character__details-image"
   >
   <div class="character__details-info">
@@ -99,7 +99,7 @@ export default {
     >
       Add to Favourite
       <img 
-        src="../../../assets/bookmark-outline.svg"
+        src="../../assets/bookmark-outline.svg"
         class="character__details-bookmark"
       >
     </h5>
@@ -109,13 +109,13 @@ export default {
     >
       Remove from Favourite
       <img 
-        src="../../../assets/bookmark-outline.svg"
+        src="../../assets/bookmark-outline.svg"
         class="character__details-bookmark"
       >
     </h5>
   </div>
   <img
-    src="../../../assets/close.svg"
+    src="../../assets/close.svg"
     class="character__details-close"
     @click="closeDetails()"
   >
@@ -180,7 +180,8 @@ export default {
   }
   .character__details-image {
     position: absolute;
-    bottom: 3rem;
+    top: -3rem;
+    margin-bottom: auto;
     left: 3.5rem;
     width: 31.75rem;
     border-radius: var(--border-radius-circular);
@@ -218,18 +219,24 @@ export default {
 @media (max-width: 1024px) {
   .character__details-base {
     width: 37.75rem;
-    height: 85%;
+    height: 80%;
     .character__details-image {
       width: 13.75rem;
       height: 17.5rem;
+    }
+    .character__details-field {
+      h3 {
+        font-size: 1rem;
+      }
     }
     .character__details-info {
       width: 70%;
       margin: 0;
       left: 3rem;
       position: absolute;
-      bottom: 3rem;
+      bottom: 2rem;
       .character__details-title {
+        font-size: 1rem;
         font-weight: 600;
       }
     }
@@ -238,7 +245,7 @@ export default {
 @media (max-width: 768px) {
   .character__details-base {
     width: 70%;
-    height: 75%;
+    height: 83%;
     .character__details-image {
       width: 15.25rem;
       height: 19rem;

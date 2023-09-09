@@ -1,5 +1,5 @@
 <script>
-import HomeHeaderButton from "./HomeHeaderButton.vue"
+import HeaderButton from "./HeaderButton.vue"
 export default {
   data() {
     return {
@@ -14,27 +14,27 @@ export default {
   },
 
   components: {
-    HomeHeaderButton
+    HeaderButton
   }
 }
 </script>
 
 <template>
 <a class="header__menu"  @click="this.showMenu">
-  <img src="../../../assets/menu.svg"/>
+  <img src="../../assets/menu.svg"/>
   <h5> Menu </h5>
   <div v-if="this.isMenu" class="header__menu-dropdown">
     <div class="header__menu-item">
-      <HomeHeaderButton text="Home" url="/"/>
+      <HeaderButton text="Home" url="/"/>
     </div>
     <div class="header__menu-item">
-      <HomeHeaderButton text="News" url="https://www.starwars.com/news"/>
+      <HeaderButton text="News" url="https://www.starwars.com/news"/>
     </div>
     <div class="header__menu-item">
-      <HomeHeaderButton text="Gallery" url="https://www.starwars.com/databank"/>
+      <HeaderButton text="Gallery" url="https://www.starwars.com/databank"/>
     </div>
     <div class="header__menu-item">
-      <HomeHeaderButton text="Forum" url="https://www.starwars.com"/>
+      <HeaderButton text="Forum" url="https://www.starwars.com"/>
     </div>
   </div>
 </a>

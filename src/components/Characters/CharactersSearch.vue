@@ -31,7 +31,7 @@ export default {
 <template>
 <div class="characters__search">
   <a @click="searchCharacter(this.query)">
-    <img src="../../../assets/magnify.svg">
+    <img src="../../assets/magnify.svg">
   </a>
   <input
     v-model="query"

@@ -1,5 +1,5 @@
 <script>
-import SiteLogo from "../SiteLogo.vue";
+import SiteLogo from "../Logo/SiteLogo.vue";
 export default {
   data() {
     return {
@@ -76,7 +76,7 @@ export default {
             @click="this.isSmallScreen ? expandGroup() : null"
           >
             Info
-            <img src="../../../assets/chevron-down.svg" class="footer__actions-dropdown">
+            <img src="../../assets/chevron-down.svg" class="footer__actions-dropdown">
           </h3>
           <a v-if="showLinks" class="footer__actions-link" href="https://www.starwars.com/"><h6>About us</h6></a>
           <a v-if="showLinks" class="footer__actions-link" href="https://disneytermsofuse.com/"><h6>Terms & Conditions</h6></a>
@@ -88,7 +88,7 @@ export default {
             @click="this.isSmallScreen ? expandExtraGroup() : null"
           >
             Extra
-            <img src="../../../assets/chevron-down.svg" class="footer__actions-dropdown">
+            <img src="../../assets/chevron-down.svg" class="footer__actions-dropdown">
           </h3>
           <a v-if="showExtraLinks" class="footer__actions-link" href="https://www.starwars.com/interactive"><h6>Games</h6></a>
           <a v-if="showExtraLinks" class="footer__actions-link" href="https://www.starwars.com/films"><h6>Movies</h6></a>
@@ -109,7 +109,7 @@ export default {
             @click="(this.isValidEmail & email!='') ? this.sendEmail() : null"
             :class="{notclickable: !(this.isValidEmail & email!='')}"
           >
-            <img src="../../../assets/arrow-left.svg">
+            <img src="../../assets/arrow-left.svg">
           </a>
         </div>
         <span v-if="(!this.isValidEmail & email!='')" class="error-message">Invalid email address</span>

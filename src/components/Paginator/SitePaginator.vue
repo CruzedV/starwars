@@ -77,15 +77,15 @@ export default {
 </script>
 
 <template>
-<div class="paginator-base">
-  <item>
+<div class="paginator__base">
+  <paginator__item>
     <img 
       src="../../assets/chevron-left.svg"
       @click="this.selectedPage == 1 ? null : setSelectedPage(this.selectedPage-1)"
       :class="{notclickable: this.selectedPage == 1}"
     />
-  </item>
-  <item
+  </paginator__item>
+  <paginator__item
     :href="i=='/?page='+i"
     v-for="i in this.pagesArray"
     :key="i"
@@ -93,19 +93,19 @@ export default {
     :class="{active: this.selectedPage == i}"
   >
     <h6 :class="{notclickable: this.selectedPage == i}"> {{ i }} </h6>
-  </item>
-  <item>
+  </paginator__item>
+  <paginator__item>
     <img 
       src="../../assets/chevron-right.svg"
       @click="this.selectedPage == 9 ? null : setSelectedPage(this.selectedPage+1)"
       :class="{notclickable: this.selectedPage == 9}"
     /> 
-  </item>
+  </paginator__item>
 </div>  
 </template>
 
 <style scoped lang="scss">
-.paginator-base {
+.paginator__base {
   display: flex;
   justify-content: center;
   align-items: flex-start;
@@ -115,7 +115,7 @@ export default {
     width: 1.5rem;
     cursor: pointer;
   }
-  item {
+  paginator__item {
     border-radius: var(--border-radius-square);
     text-decoration: none;
     :hover {
@@ -152,7 +152,7 @@ export default {
   }
 }
 @media (max-width: 768px) {
-  .paginator-base {
+  .paginator__base {
     img {
       display: none;
     }
@@ -163,7 +163,7 @@ export default {
   }
 }
 @media (max-width: 320px) {
-  .paginator-base {
+  .paginator__base {
     gap: 0.5rem;
     img {
       display: none;

@@ -1,20 +1,20 @@
 <script setup>
-import SiteLogo from "../SiteLogo.vue";
-import HomeHeaderButton from "./HomeHeaderButton.vue";
-import HomeHeaderFavourite from "./HomeHeaderFavourite.vue"
-import HomeHeaderMenu from "./HomeHeaderMenu.vue";
+import SiteLogo from "../Logo/SiteLogo.vue";
+import HeaderButton from "./HeaderButton.vue";
+import HeaderFavourite from "./HeaderFavourite.vue"
+import HeaderMenu from "./HeaderMenu.vue";
 </script>
 
 <template>
 <div class="header">
   <SiteLogo/>
   <div class="header__actions">
-    <HomeHeaderButton text="Home" url="/"/>
-    <HomeHeaderButton text="News" url="https://www.starwars.com/news"/>
-    <HomeHeaderButton text="Gallery" url="https://www.starwars.com/databank"/>
-    <HomeHeaderButton text="Forum" url="https://www.starwars.com"/>
-    <HomeHeaderMenu/>
-    <HomeHeaderFavourite/>
+    <HeaderButton text="Home" url="/"/>
+    <HeaderButton text="News" url="https://www.starwars.com/news"/>
+    <HeaderButton text="Gallery" url="https://www.starwars.com/databank"/>
+    <HeaderButton text="Forum" url="https://www.starwars.com"/>
+    <HeaderMenu/>
+    <HeaderFavourite/>
   </div>
 </div>
 </template>

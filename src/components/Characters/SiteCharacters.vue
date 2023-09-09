@@ -1,6 +1,6 @@
 <script>
-import HomeCharacterCard from "./HomeCharacterCard.vue";
-import HomeCharactersTitle from "./HomeCharactersTitle.vue";
+import CharacterCard from "./CharacterCard.vue";
+import CharactersTitle from "./CharactersTitle.vue";
 import { useCharactersStore } from "@/stores/characters"
 export default {
   setup() {
@@ -23,17 +23,17 @@ export default {
   },
 
   components: {
-    HomeCharacterCard,
-    HomeCharactersTitle,
+    CharacterCard,
+    CharactersTitle,
   },
 }
 </script>
 
 <template>
 <div class="characters">
-  <HomeCharactersTitle/>
+  <CharactersTitle/>
   <div class="characters__cards">
-    <HomeCharacterCard
+    <CharacterCard
       v-for="character in computeCharacters"
       :key="character.name"
       :name="character.name"

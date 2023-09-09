@@ -1,5 +1,5 @@
 <script>
-import HomeCharacterDetails from './HomeCharacterDetails.vue'
+import CharacterDetails from './CharacterDetails.vue'
 export default {
   props: {
     name: String,
@@ -19,7 +19,7 @@ export default {
   },
 
   components: {
-    HomeCharacterDetails
+    CharacterDetails
   },
 
   methods: {
@@ -30,11 +30,10 @@ export default {
 }
 </script>
 
-
 <template>
 <div class="character__card-base">
   <div class="character__card-background">
-    <img src="../../../assets/example-picture.jpg">
+    <img src="../../assets/example-picture.jpg">
     <div class="character__card-info">
       <h2>
         {{ name }}
@@ -44,7 +43,7 @@ export default {
   </div>
 </div>
 <div v-if="showInfo" class="character__details-overlay">
-  <HomeCharacterDetails
+  <CharacterDetails
     :name="this.name"
     :birth_year="this.birth_year"
     :height="this.height"

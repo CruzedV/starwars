@@ -28,11 +28,8 @@ export default {
 </script>
 
 <template>
-<a 
-  class="header__favourite" 
-  @click="favouriteAmount > 0 ? getFavourite() : null"
->
-  <img src="../../../assets/bookmark-outline.svg"/>
+<a @click="favouriteAmount > 0 ? getFavourite() : null" class="header__favourite">
+  <img src="../../assets/bookmark-outline.svg"/>
   <h6 
     class="header__favourite-amount"
     v-if="favouriteAmount > 0"
@@ -55,7 +52,7 @@ export default {
   background-color: var(--background);
   margin: 0.25rem;
   position: relative;
-  :hover {
+  &:hover {
     transition: background-color 0.4s, color 0.4s;
     background: var(--foreground);
     color: var(--text-inactive);

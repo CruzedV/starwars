@@ -1,9 +1,17 @@
 <script setup>
-import HomePage from "../components/Home/HomePage.vue"
+import SiteBreadcrumbs from "@/components/BreadCrumbs/SiteBreadcrumbs.vue"
+import SiteCharacters from "@/components/Characters/SiteCharacters.vue"
+import SiteFooter from "@/components/Footer/SiteFooter.vue"
+import SiteHeader from "@/components/Header/SiteHeader.vue"
+import SitePaginator from "@/components/Paginator/SitePaginator.vue"
 </script>
 
 <template>
   <main>
-    <HomePage/>
+    <SiteHeader/>
+    <SiteBreadcrumbs/>
+    <SiteCharacters/>
+    <SitePaginator/>
+    <SiteFooter/>
   </main>
 </template>
