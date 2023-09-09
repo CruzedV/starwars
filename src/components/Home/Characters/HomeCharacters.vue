@@ -32,7 +32,7 @@ export default {
 <template>
 <div class="characters">
   <HomeCharactersTitle/>
-  <div class="characters-cards">
+  <div class="characters__cards">
     <HomeCharacterCard
       v-for="character in computeCharacters"
       :key="character.name"
@@ -54,7 +54,7 @@ export default {
   height: inherit;
   margin-bottom: 5rem;
 }
-.characters-cards {
+.characters__cards {
   gap: 2rem;
   width: 100%;
   margin-top: 4.5rem;

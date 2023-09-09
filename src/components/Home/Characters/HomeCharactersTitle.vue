@@ -3,14 +3,14 @@ import HomeCharactersSearch from "./HomeCharactersSearch.vue";
 </script>
 
 <template>
-<div class="characters-title">
+<div class="characters__title">
   <h1>Characters</h1>
   <HomeCharactersSearch/>
 </div>
 </template>
 
 <style scoped lang="scss">
-.characters-title {
+.characters__title {
   align-items: center;
   height: 2.5rem;
   display: flex;

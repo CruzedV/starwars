@@ -29,7 +29,7 @@ export default {
 </script>
 
 <template>
-<div class="search-field">
+<div class="characters__search">
   <a @click="searchCharacter(this.query)">
     <img src="../../../assets/magnify.svg">
   </a>
@@ -42,7 +42,7 @@ export default {
 </template>
 
 <style scoped lang="scss">
-.search-field {
+.characters__search {
   display: flex;
   align-items: center;
   border-radius: var(--border-radius-square);
