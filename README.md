@@ -1,7 +1,9 @@
 # StarWarsTest
-
+https://cruzedv.github.io/starwars/
 ### About project ###
-Small StarWars test, using adaptive layout.
+Small StarWars, using adaptive layout
+Because of github pages specifics: (https://github.com/orgs/community/discussions/36908)
+Routing is useless
 ### Adaptive sizes ###
 1920px,
 1280px,
