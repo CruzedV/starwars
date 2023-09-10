@@ -9,12 +9,12 @@ const router = createRouter({
     {
       path: "/",
       name: "home",
-      component: CharacterView,
+      component: HomeView,
     },
     {
       path: "/characters/:pathMatch(.*)*",
       name: "characters",
-      component: HomeView,
+      component: CharacterView,
     },
     {
       path: "/:pathMatch(.*)*",
