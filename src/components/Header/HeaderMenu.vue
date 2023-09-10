@@ -25,16 +25,16 @@ export default {
   <h5> Menu </h5>
   <div v-if="this.isMenu" class="header__menu-dropdown">
     <div class="header__menu-item">
-      <HeaderButton text="Home" url="/"/>
+      <HeaderButton text="Home" url="/starwars"/>
     </div>
     <div class="header__menu-item">
-      <HeaderButton text="News" url="/news"/>
+      <HeaderButton text="News" url="/starwars/news"/>
     </div>
     <div class="header__menu-item">
-      <HeaderButton text="Characters" url="/characters"/>
+      <HeaderButton text="Characters" url="/starwars/characters"/>
     </div>
     <div class="header__menu-item">
-      <HeaderButton text="Forum" url="/forum"/>
+      <HeaderButton text="Forum" url="/starwars/forum"/>
     </div>
   </div>
 </a>

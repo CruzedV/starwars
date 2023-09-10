@@ -8,7 +8,7 @@ export default defineConfig({
   plugins: [
     vue(),
   ],
-  base: process.env.NODE_ENV === "production" ? "/starwars/" : "/",
+  base: "/starwars",
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))

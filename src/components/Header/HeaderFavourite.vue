@@ -28,7 +28,7 @@ export default {
 </script>
 
 <template>
-<a href="/characters?favourite" @click="favouriteAmount > 0 ? this.setFavourite() : null" class="header__favourite">
+<a href="/starwars/characters?favourite" @click="favouriteAmount > 0 ? this.setFavourite() : null" class="header__favourite">
   <img src="../../assets/bookmark-outline.svg"/>
   <h6 
     class="header__favourite-amount"
