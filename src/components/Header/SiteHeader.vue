@@ -34,7 +34,6 @@ import HeaderMenu from "./HeaderMenu.vue";
 }
 .header__actions {
   gap: 0.25rem;
-  margin: 0.25rem 0;
   display: flex;
   justify-content: center;
   align-items: center;

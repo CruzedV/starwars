@@ -8,7 +8,10 @@ export default {
 
   beforeMount() {
     const segments = window.location.pathname.split("/")
-    segments.shift()
+    segments[0] = "/"
+    if (segments[1] == "") {
+      segments.pop()
+    }
     for (let seg in segments) {
       let i = segments[seg]
       // Make first letter of element uppercase 
@@ -23,12 +26,12 @@ export default {
   <a
     v-for="(item, index) in urlArray"
     :key="index"
-    :href="item.url == 'starwars' ? '/' : item.url"
+    :href="item.url"
   >
     <h5>
       {{
       // If element "Starwars" make it Home also make first letter capital
-      (item.url == "starwars" ? "Home" : item.url.charAt(0).toUpperCase() + item.url.slice(1))
+      (item.url == "/" ? "Home" : item.url.charAt(0).toUpperCase() + item.url.slice(1))
       // If last element, don't add /
       + (urlArray[urlArray.length - 1].url == item.url ? "" : " /") }}
     </h5>
