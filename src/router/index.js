@@ -12,7 +12,7 @@ const router = createRouter({
       component: HomeView,
     },
     {
-      path: "/characters/:pathMatch(.*)*",
+      path: "/characters",
       name: "characters",
       component: CharacterView,
     },

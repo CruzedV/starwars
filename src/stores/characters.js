@@ -4,8 +4,8 @@ export const useCharactersStore = defineStore('characters', {
   state: () => {
     return { 
       characters: {}, 
-      favourite: JSON.parse(localStorage.getItem("favourites")) || [],
-      favouriteAmount: JSON.parse(localStorage.getItem("favourites")).length || 0,
+      favourite: localStorage.getItem("favourites") ? JSON.parse(localStorage.getItem("favourites")) : [],
+      favouriteAmount: localStorage.getItem("favourites") ? JSON.parse(localStorage.getItem("favourites")).length : 0,
     }
   },
   actions: {

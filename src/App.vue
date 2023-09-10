@@ -1,5 +1,6 @@
 <script setup>
 import { RouterView } from 'vue-router'
+localStorage.setItem("favourites", [])
 </script>
 
 <template>
