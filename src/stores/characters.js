@@ -9,7 +9,7 @@ export const useCharactersStore = defineStore('characters', {
     }
   },
   actions: {
-    setCharactersList(data) {
+    setCharacters(data) {
       try {
         this.characters = {...data}
       } catch(error) {
@@ -37,7 +37,7 @@ export const useCharactersStore = defineStore('characters', {
   },
   getters: {
     getCharacters() {
-      return this.characters
+      return this.characters.results ? this.characters.results : this.characters
     },
     getFavourite() {
       return this.favourite

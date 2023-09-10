@@ -52,10 +52,10 @@ export default {
     },
     async fetchCharactersList(page) {
       try {
-        this.charactersStore.setCharactersList([])
+        this.charactersStore.setCharacters([])
         // replace 'people' with current url
         let response = await fetch("https://swapi.dev/api/"+"people"+"/?page="+page)
-        await this.charactersStore.setCharactersList(await response.json())
+        await this.charactersStore.setCharacters(await response.json())
         await this.setPagesArray()
       } catch(error) {
         console.error("Error while fetching characters list: "+error)

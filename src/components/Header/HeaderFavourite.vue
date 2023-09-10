@@ -10,9 +10,9 @@ export default {
   },
 
   methods: {
-    getFavourite() {
+    setFavourite() {
       try {
-        this.charactersStore.setCharactersList(this.charactersStore.getFavourite)
+        this.charactersStore.setCharacters(this.charactersStore.getFavourite)
       } catch(error) {
         console.error("Error loading favourites")
       }
@@ -28,7 +28,7 @@ export default {
 </script>
 
 <template>
-<a @click="favouriteAmount > 0 ? getFavourite() : null" class="header__favourite">
+<a @click="favouriteAmount > 0 ? this.setFavourite() : null" class="header__favourite">
   <img src="../../assets/bookmark-outline.svg"/>
   <h6 
     class="header__favourite-amount"

@@ -17,9 +17,17 @@ export default {
   methods: {
     async searchCharacter(query) {
       try {
-        this.charactersStore.setCharactersList([])
+        const oldList = this.charactersStore.getCharacters
+        this.charactersStore.setCharacters([])
+        console.log(typeof query, query)
         let response = await fetch("https://swapi.dev/api/people/?search="+query)
-        this.charactersStore.setCharactersList(await response.json())
+        response = await response.json()
+        console.log(response)
+        if (response.count != 0) {
+          this.charactersStore.setCharacters(response)
+        } else { 
+          this.charactersStore.setCharacters(oldList)
+        }
       } catch(error) {
         console.error("Error while fetching search: ",+error)
       }
