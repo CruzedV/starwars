@@ -54,7 +54,7 @@ export default {
       try {
         this.charactersStore.setCharacters([])
         // replace 'people' with current url
-        let response = await fetch("https://swapi.dev/api/"+"people"+"/?page="+page)
+        let response = await fetch("https://swapi.dev/api/people/?page="+page)
         await this.charactersStore.setCharacters(await response.json())
         await this.setPagesArray()
       } catch(error) {
@@ -70,7 +70,11 @@ export default {
   },
 
   mounted() {
-    this.fetchCharactersList(this.selectedPage)
+    if (window.location.search == "?favourite") {
+      this.charactersStore.setCharacters(this.charactersStore.getFavourite)
+    } else {
+      this.fetchCharactersList(this.selectedPage)
+    }
   },
 
   watch: {

@@ -19,10 +19,8 @@ export default {
       try {
         const oldList = this.charactersStore.getCharacters
         this.charactersStore.setCharacters([])
-        console.log(typeof query, query)
         let response = await fetch("https://swapi.dev/api/people/?search="+query)
         response = await response.json()
-        console.log(response)
         if (response.count != 0) {
           this.charactersStore.setCharacters(response)
         } else { 
