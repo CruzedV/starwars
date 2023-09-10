@@ -23,7 +23,7 @@ export default {
   <a
     v-for="(item, index) in urlArray"
     :key="index"
-    :href="item.url"
+    :href="item.url == 'starwars' ? '/' : item.url"
   >
     <h5>
       {{

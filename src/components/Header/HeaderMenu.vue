@@ -25,7 +25,7 @@ export default {
   <h5> Menu </h5>
   <div v-if="this.isMenu" class="header__menu-dropdown">
     <div class="header__menu-item">
-      <HeaderButton text="Home" url="/starwars"/>
+      <HeaderButton text="Home" url="/"/>
     </div>
     <div class="header__menu-item">
       <HeaderButton text="News" url="/starwars/news"/>
