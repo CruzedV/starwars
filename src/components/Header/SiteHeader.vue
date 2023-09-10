@@ -10,9 +10,9 @@ import HeaderMenu from "./HeaderMenu.vue";
   <SiteLogo/>
   <div class="header__actions">
     <HeaderButton text="Home" url="/"/>
-    <HeaderButton text="News" url="/starwars/news"/>
-    <HeaderButton text="Characters" url="/starwars/characters"/>
-    <HeaderButton text="Forum" url="/starwars/forum"/>
+    <HeaderButton text="News" url="/news"/>
+    <HeaderButton text="Characters" url="/characters"/>
+    <HeaderButton text="Forum" url="/forum"/>
     <HeaderMenu/>
     <HeaderFavourite/>
   </div>
@@ -34,6 +34,7 @@ import HeaderMenu from "./HeaderMenu.vue";
 }
 .header__actions {
   gap: 0.25rem;
+  margin: 0.25rem 0;
   display: flex;
   justify-content: center;
   align-items: center;

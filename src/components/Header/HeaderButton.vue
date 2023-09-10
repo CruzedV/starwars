@@ -14,21 +14,21 @@ export default {
 </script>
 
 <template>
-<a @click="redirectToUrl" class="header__button">
+<router-link :to="this.url" class="header__button">
   <h3>{{ text }}</h3>
   <h5> {{ text }}</h5>
-</a>
+</router-link>
 </template>
 
 <style scoped lang="scss">
 .header__button {
   cursor: pointer;
+  text-decoration: none;
   width: 11.5rem;
   height: 5rem;
   border-radius: var(--border-radius-rounded);
   border: 1px solid var(--stroke-inactive);
   color: var(--text-active);
-  margin: 0.25 0rem;
   justify-content: center;
   align-items: center;
   display: flex;

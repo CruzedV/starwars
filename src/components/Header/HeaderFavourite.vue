@@ -28,7 +28,7 @@ export default {
 </script>
 
 <template>
-<a href="/starwars/characters?favourite" @click="favouriteAmount > 0 ? this.setFavourite() : null" class="header__favourite">
+<router-link tp="/characters?favourite" @click="favouriteAmount > 0 ? this.setFavourite() : null" class="header__favourite">
   <img src="../../assets/bookmark-outline.svg"/>
   <h6 
     class="header__favourite-amount"
@@ -36,7 +36,7 @@ export default {
   >
     {{ favouriteAmount }}
   </h6>
-</a>
+</router-link>
 </template>
 
 <style scoped lang="scss">

@@ -1,7 +1,7 @@
 <template>
   <div class="not-found">
     <h1>404 Page not found </h1>
-    <a href="/">Home</a>
+    <router-link to="/">Home</router-link>
   </div>
 </template>
 
