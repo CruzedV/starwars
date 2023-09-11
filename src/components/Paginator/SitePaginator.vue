@@ -19,7 +19,7 @@ export default {
     setSelectedPage(page) {
       if (page != "...") {
         this.selectedPage = page
-        history.pushState(null, null, `?page=${page}`);
+        history.pushState(null, null, `/characters/?page=${page}`);
       }
     },
     setPagesArray() {
@@ -69,7 +69,7 @@ export default {
     }
   },
 
-  mounted() {
+  beforeMount() {
     if (window.location.search == "?favourite") {
       this.charactersStore.setCharacters(this.charactersStore.getFavourite)
     } else {
@@ -87,29 +87,35 @@ export default {
 
 <template>
 <div class="paginator__base">
-  <paginator__item>
+  <router-link 
+    class="paginator__item"
+    to=""
+  >
     <img 
       src="../../assets/chevron-left.svg"
       @click="this.selectedPage == 1 ? null : setSelectedPage(this.selectedPage-1)"
       :class="{notclickable: this.selectedPage == 1}"
     />
-  </paginator__item>
-  <paginator__item
-    :href="i=='/?page='+i"
+  </router-link>
+  <router-link class="paginator__item"
     v-for="i in this.pagesArray"
+    to=""
     :key="i"
     @click="this.selectedPage == i ? null : setSelectedPage(i)"
     :class="{active: this.selectedPage == i}"
   >
     <h6 :class="{notclickable: this.selectedPage == i}"> {{ i }} </h6>
-  </paginator__item>
-  <paginator__item>
+  </router-link>
+  <router-link 
+    class="paginator__item"
+    to=""
+  >
     <img 
       src="../../assets/chevron-right.svg"
       @click="this.selectedPage == 9 ? null : setSelectedPage(this.selectedPage+1)"
       :class="{notclickable: this.selectedPage == 9}"
     /> 
-  </paginator__item>
+  </router-link>
 </div>  
 </template>
 
@@ -124,7 +130,7 @@ export default {
     width: 1.5rem;
     cursor: pointer;
   }
-  paginator__item {
+  .paginator__item {
     border-radius: var(--border-radius-square);
     text-decoration: none;
     :hover {

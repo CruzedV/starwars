@@ -35,11 +35,8 @@ export default {
         eye_color: this.eye_color,
         films: this.films,
       };
-
-      let favourites = JSON.parse(localStorage.getItem("favourites")) || []
-
+      let favourites = JSON.parse(localStorage.getItem("favourites"))
       const existingCharacterIndex = favourites.findIndex(item => item.name === this.name)
-      
       if (existingCharacterIndex !== -1) {
         favourites.splice(existingCharacterIndex, 1);
       } else {

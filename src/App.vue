@@ -1,6 +1,8 @@
 <script setup>
 import { RouterView } from 'vue-router'
-localStorage.setItem("favourites", [])
+if (localStorage.getItem("favourites") == null) {
+  localStorage.setItem("favourites", JSON.stringify([]))
+}
 </script>
 
 <template>

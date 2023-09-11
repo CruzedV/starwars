@@ -4,12 +4,6 @@ export default {
     text: String,
     url: String,
   },
-
-  methods: {
-    redirectToUrl() {
-      window.location.href = this.url
-    }
-  }
 }
 </script>
 

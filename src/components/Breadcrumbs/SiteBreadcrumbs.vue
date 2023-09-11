@@ -23,10 +23,10 @@ export default {
 
 <template>
 <div class="breadcrumbs">
-  <a
+  <router-link
     v-for="(item, index) in urlArray"
     :key="index"
-    :href="item.url"
+    :to="item.url"
   >
     <h5>
       {{
@@ -35,7 +35,7 @@ export default {
       // If last element, don't add /
       + (urlArray[urlArray.length - 1].url == item.url ? "" : " /") }}
     </h5>
-  </a>
+  </router-link>
 </div>
 </template>
 
