@@ -1,9 +1,8 @@
 # StarWarsTest
 https://cruzedv.github.io/starwars/
 ### About project ###
-Small StarWars, using adaptive layout
-Because of github pages specifics: (https://github.com/orgs/community/discussions/36908)
-Routing is useless
+Small StarWars project, using adaptive layout and swapi
+There is error, which appearing when user not in home page and reload pages. Because vue losts index.html
 ### Adaptive sizes ###
 1920px,
 1280px,
