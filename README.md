@@ -2,7 +2,8 @@
 https://cruzedv.github.io/starwars/
 ### About project ###
 Small StarWars project, using adaptive layout and swapi
-There is error, which appearing when user not in home page and reload pages. Because vue losts index.html
+Link to see it:
+https://starwars-roan-psi.vercel.app/
 ### Adaptive sizes ###
 1920px,
 1280px,
