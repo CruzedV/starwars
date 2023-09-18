@@ -1,5 +1,4 @@
-# StarWarsTest
-https://cruzedv.github.io/starwars/
+# StarWars
 ### About project ###
 Small StarWars project, using adaptive layout and swapi
 Link to see it:
